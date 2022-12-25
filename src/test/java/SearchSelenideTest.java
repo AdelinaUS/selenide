@@ -5,11 +5,9 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TestSearchSelenide {
-
-
+public class SearchSelenideTest {
     @Test
-    void SearchExample() {
+    void searchExample() {
         Configuration.holdBrowserOpen = true;
 
         open("https://github.com/");
