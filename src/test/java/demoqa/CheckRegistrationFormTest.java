@@ -1,20 +1,21 @@
 package demoqa;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.Keys;
 
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class CheckRegistrationFormTest {
+    File cv = new File("src/test/resources/Photo.png");
+    SelenideElement subject = $("#subjectsInput");
+
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
@@ -24,42 +25,53 @@ public class CheckRegistrationFormTest {
 
     @Test
     void successfulRegistration() {
+        String testFirstName = "Test first name";
+        String testLastName = "Test last name";
+        String testEmail = "Test@gmail.com";
+        String testPhone = "8927123456";
+
         open("/automation-practice-form");
 
         $(".main-header").shouldHave(text("Practice Form"));
-        $("#firstName").setValue("Test first name")
-                .shouldBe(Condition.value("Test first name")); // @todo Или так будет корректно проверять ввод формы?
-        $("#lastName").setValue("Test last name");
-        $("#userEmail").setValue("Test@gmail.com");
-        $("[for=gender-radio-2]").click();
-        $("#userNumber").setValue("89271111111");
+        $("#firstName").setValue(testFirstName).shouldBe(value(testFirstName));
+        $("#lastName").setValue(testLastName);
+        $("#userEmail").setValue(testEmail);
+        $("#genterWrapper").$(byText("Female")).click();
+
+        $("#userNumber").setValue(testPhone).shouldBe(value(testPhone));
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOptionByValue("10");
         $(".react-datepicker__year-select").selectOptionByValue("1980");
         $(".react-datepicker__day--003").click();
-        $("#subjectsInput").setValue("Java");
 
-        SelenideElement subject = $("#subjectsInput");
-        subject.setValue("M").pressEnter();
-        subject.setValue("Com");
-        subject.sendKeys(Keys.ARROW_DOWN);
-        subject.pressEnter();
+        subject.setValue("Math").pressEnter();
+        subject.setValue("Commerce").pressEnter();
 
-        $("[for=hobbies-checkbox-1]").click();
-        $("[for=hobbies-checkbox-2]").click();
+        $("#hobbiesWrapper").$(byText("Sports")).click();
+        $("#hobbiesWrapper").$(byText("Reading")).click();
 
-        File cv = new File("src/test/resources/Photo.png");
+
         $("#uploadPicture").uploadFile(cv);
 
         $("#currentAddress").setValue("Address1");
         $("#state").click();
-        $("#react-select-3-option-0").sibling(0).click();
+        $("#stateCity-wrapper").$(byText("Uttar Pradesh")).click();
         $("#city").click();
-        $("#city").lastChild().find(byText("Agra")).click();
-        $("#submit").pressEnter();
-        $(".modal-header").shouldHave(text("Thanks for submitting the form"));
+        $("#stateCity-wrapper").$(byText("Agra")).click();
+        $("#submit").click();
 
-        // @todo Может быть имеет смысл проверить на фактическое сохранение данных - то есть вывод данных в сплывающем окне?
+
+        ElementsCollection dataTable = $$(".table-dark tr");
+        dataTable.get(1).$("td", 1).shouldHave(text(testFirstName + " " + testLastName));
+        dataTable.get(2).$("td", 1).shouldHave(text(testEmail));
+        dataTable.get(3).$("td", 1).shouldHave(text("Female"));
+        dataTable.get(4).$("td", 1).shouldHave(text(testPhone));
+        dataTable.get(5).$("td", 1).shouldHave(text("03 November,1980"));
+        dataTable.get(6).$("td", 1).shouldHave(text("Maths, Commerce"));
+        dataTable.get(7).$("td", 1).shouldHave(text("Sports, Reading"));
+        dataTable.get(8).$("td", 1).shouldHave(text("Photo.png"));
+        dataTable.get(9).$("td", 1).shouldHave(text("Address1"));
+        dataTable.get(10).$("td", 1).shouldHave(text("Uttar Pradesh Agra"));
     }
 
     @Test
@@ -73,3 +85,4 @@ public class CheckRegistrationFormTest {
         $(".was-validated").should(exist);
     }
 }
+
