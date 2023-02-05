@@ -20,6 +20,10 @@ public class RegistrationPage {
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
+
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('#footer').remove()");
+
         $(".main-header").shouldHave(text(titleText));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('#footer').remove()");
