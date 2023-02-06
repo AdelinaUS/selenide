@@ -13,7 +13,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Проверка QA.GURU")
-public class LoginTests {
+public class LoginTest {
 
     @BeforeAll
     static void setConfiguration() {

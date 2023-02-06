@@ -12,7 +12,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Проверка поиска в Google")
-public class SearchTests {
+public class SearchTest {
 
     @BeforeAll
     static void setConfiguration() {
