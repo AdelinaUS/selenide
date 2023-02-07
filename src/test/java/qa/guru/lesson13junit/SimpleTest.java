@@ -1,23 +1,24 @@
-package guru.qa.lesson13junit;
+package qa.guru.lesson13junit;
 
-import com.codeborne.selenide.Condition;
+import static com.codeborne.selenide.CollectionCondition.texts;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.open;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import java.util.List;
-
-import static com.codeborne.selenide.CollectionCondition.texts;
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.*;
-
 @DisplayName("Проверка поиска Яндекс.Музыка")
 public class SimpleTest {
+
     @BeforeAll
     public static void init() {
         Configuration.browserSize = "1920x1080";
@@ -27,8 +28,8 @@ public class SimpleTest {
 
     @ParameterizedTest(name = "Заголовок {1} должен быть при поиске артиста {2}")
     @CsvSource({
-            "Imagine Dragons, Imagine Dragons",
-            "Любэ, Любэ"
+        "Imagine Dragons, Imagine Dragons",
+        "Любэ, Любэ"
     })
     void search(String artist, String title) {
         open("/");
@@ -44,7 +45,7 @@ public class SimpleTest {
 
         $("h1.page-artist__title").shouldBe(text(title));
         $$("div.d-tabs div")
-                .filter(visible)
-                .shouldHave(texts(List.of("ГЛАВНОЕ", "ТРЕКИ", "АЛЬБОМЫ", "КЛИПЫ", "ПОХОЖИЕ", "ИНФО")));
+            .filter(visible)
+            .shouldHave(texts(List.of("ГЛАВНОЕ", "ТРЕКИ", "АЛЬБОМЫ", "КЛИПЫ", "ПОХОЖИЕ", "ИНФО")));
     }
 }
