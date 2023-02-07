@@ -1,8 +1,8 @@
-package pages;
+package qa.guru.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import pages.components.RegistrationResultsModal;
+import qa.guru.pages.components.RegistrationResultsModal;
 
 import java.io.File;
 
