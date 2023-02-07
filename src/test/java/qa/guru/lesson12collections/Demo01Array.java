@@ -1,4 +1,4 @@
-package lesson12collections;
+package qa.guru.lesson12collections;
 
 import java.util.Arrays;
 

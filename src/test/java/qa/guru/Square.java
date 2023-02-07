@@ -1,6 +1,5 @@
-package quru.qa;
+package qa.guru;
 
-import guru.qa.Arithmetic;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
