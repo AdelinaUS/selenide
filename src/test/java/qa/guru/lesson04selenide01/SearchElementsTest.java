@@ -1,6 +1,5 @@
-package qa.guru.lesson03selenide01;
+package qa.guru.lesson04selenide01;
 
-import static com.codeborne.selenide.Browsers.CHROME;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.hasWebDriverStarted;
 

@@ -1,4 +1,4 @@
-package qa.guru.lesson03selenide01;
+package qa.guru.lesson04selenide01;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;

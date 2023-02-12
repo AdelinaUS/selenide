@@ -1,4 +1,4 @@
-package qa.guru.lesson01tools;
+package qa.guru.lesson02tools;
 
 import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Condition.text;

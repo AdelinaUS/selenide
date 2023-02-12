@@ -1,4 +1,4 @@
-package qa.guru.lesson02idea;
+package qa.guru.lesson03idea;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
