@@ -3,8 +3,8 @@ package qa.guru.lesson13junit;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import Calculate.Numbers;
-import Calculate.Strings;
+import qa.guru.Calculate.Numbers;
+import qa.guru.Calculate.Strings;
 import java.time.Month;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.DisplayName;
