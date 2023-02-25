@@ -3,6 +3,9 @@ plugins {
     id 'io.qameta.allure' version '2.11.2'
 }
 
+group 'quru.qa'
+version '1.0'
+
 allure {
     report {
         version.set('2.20.1')
@@ -29,7 +32,12 @@ dependencies {
             'org.slf4j:slf4j-simple:2.0.6',
             'io.qameta.allure:allure-selenide:2.20.1',
             'com.fasterxml.jackson.core:jackson-core:2.14.2',
-            'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+            'com.fasterxml.jackson.core:jackson-databind:2.14.2',
+            'org.assertj:assertj-core:3.24.2',
+            'com.codeborne:pdf-test:1.8.1',
+            'com.codeborne:xls-test:1.4.3',
+            'com.opencsv:opencsv:5.7.1',
+            'commons-io:commons-io:2.11.0'
     )
 }
 
