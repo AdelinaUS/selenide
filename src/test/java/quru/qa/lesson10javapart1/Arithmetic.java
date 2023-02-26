@@ -1,4 +1,4 @@
-package quru.qa;
+package quru.qa.lesson10javapart1;
 
 public class Arithmetic {
     public double eq(double a, double b) {

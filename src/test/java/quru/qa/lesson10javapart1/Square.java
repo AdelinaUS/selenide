@@ -1,4 +1,4 @@
-package quru.qa;
+package quru.qa.lesson10javapart1;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

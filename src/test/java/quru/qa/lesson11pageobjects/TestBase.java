@@ -1,10 +1,11 @@
-package quru.qa.demoqa;
+package quru.qa.lesson11pageobjects;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import quru.qa.pages.RegistrationPage;
 
 public class TestBase {
+
     RegistrationPage registrationPage = new RegistrationPage();
 
     @BeforeAll

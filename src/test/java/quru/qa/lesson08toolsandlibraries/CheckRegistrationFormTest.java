@@ -1,4 +1,4 @@
-package quru.qa.demoqa;
+package quru.qa.lesson08toolsandlibraries;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;

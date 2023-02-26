@@ -1,4 +1,4 @@
-package quru.qa;
+package quru.qa.lesson10javapart1;
 
 class Main {
     public static void main(String[] args) {
