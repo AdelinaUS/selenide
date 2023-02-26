@@ -9,7 +9,7 @@ public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
         String testFirstName = "Test first name";
         String testLastName = "Test last name";
         String testEmail = "Test@gmail.com";
-        String[] subjects = {"Math", "Commerce"};
+        String[] subjects = {"Math", "Comqmerce"};
         String[] hobbies = {"Sports", "Reading"};
 
         registrationPage.openPage()
