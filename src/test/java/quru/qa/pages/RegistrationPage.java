@@ -62,7 +62,7 @@ public class RegistrationPage {
 
     public RegistrationPage setBirthDate(String day, String month, String year) {
         Selenide.$("#dateOfBirthInput").click();
-        Selenide.$(".react-datepicker__month-select").selectOptionByValue(month);
+        Selenide.$(".react-datepicker__month-select").selectOptionContainingText(month);
         Selenide.$(".react-datepicker__year-select").selectOptionByValue(year);
         Selenide.$(".react-datepicker__day--" + day).click();
 

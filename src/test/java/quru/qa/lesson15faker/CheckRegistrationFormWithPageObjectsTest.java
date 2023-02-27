@@ -43,7 +43,7 @@ public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
             .setTestEmail(email)
             .setGender(gender)
             .setPhone(phone)
-            .setBirthDate(StringUtils.leftPad(day, 3, "0"), month, year)
+            .setBirthDate(StringUtils.leftPad(day, 3, "0"), nameOfMonth, year)
             .setSubjects(subjects)
             .setHobbies(hobbies)
             .setImg("src/test/resources/Photo.png")
