@@ -135,25 +135,6 @@ public class RegistrationPage {
         return this;
     }
 
-    public void checkSubmit() {
-        String testFirstName = "Test first name";
-        String testLastName = "Test last name";
-        String testEmail = "Test@gmail.com";
-        String testPhone = "8927123456";
-
-        ElementsCollection dataTable = Selenide.$$(".table-dark tr");
-        dataTable.get(1).$("td", 1).shouldHave(Condition.text(testFirstName + " " + testLastName));
-        dataTable.get(2).$("td", 1).shouldHave(Condition.text(testEmail));
-        dataTable.get(3).$("td", 1).shouldHave(Condition.text("Female"));
-        dataTable.get(4).$("td", 1).shouldHave(Condition.text(testPhone));
-        dataTable.get(5).$("td", 1).shouldHave(Condition.text("03 November,1980"));
-        dataTable.get(6).$("td", 1).shouldHave(Condition.text("Maths, Commerce"));
-        dataTable.get(7).$("td", 1).shouldHave(Condition.text("Sports, Reading"));
-        dataTable.get(8).$("td", 1).shouldHave(Condition.text("Photo.png"));
-        dataTable.get(9).$("td", 1).shouldHave(Condition.text("Address1"));
-        dataTable.get(10).$("td", 1).shouldHave(Condition.text("Uttar Pradesh Agra"));
-    }
-
     public void checkWasValidated() {
         Selenide.$(".was-validated").should(Condition.exist);
     }

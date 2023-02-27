@@ -1,6 +1,7 @@
 package quru.qa.lesson11pageobjects;
 
 import org.junit.jupiter.api.Test;
+import quru.qa.base.TestBase;
 
 public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
 
@@ -26,9 +27,7 @@ public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
             .setState("Uttar Pradesh")
             .setCity("Agra");
 
-        registrationPage
-            .submit()
-            .checkSubmit();
+        registrationPage.submit();
 
         registrationPage.verifyResultsModalAppears()
             .verifyResult("Student Name", testFirstName + " " + testLastName)
