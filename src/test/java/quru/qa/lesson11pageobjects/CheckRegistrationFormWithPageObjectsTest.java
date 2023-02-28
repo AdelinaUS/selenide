@@ -1,8 +1,10 @@
 package quru.qa.lesson11pageobjects;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import quru.qa.base.TestBase;
 
+@Tag("checked")
 public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
 
     @Test
@@ -19,7 +21,7 @@ public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
             .setTestEmail(testEmail)
             .setGender("Female")
             .setPhone("8927123456")
-            .setBirthDate("003", "10", "1980")
+            .setBirthDate("003", "January", "1980")
             .setSubjects(subjects)
             .setHobbies(hobbies)
             .setImg("src/test/resources/Photo.png")
@@ -34,7 +36,7 @@ public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
             .verifyResult("Student Email", "Test@gmail.com")
             .verifyResult("Gender", "Female")
             .verifyResult("Mobile", "8927123456")
-            .verifyResult("Date of Birth", "03 November,1980")
+            .verifyResult("Date of Birth", "03 January,1980")
             .verifyResult("Subjects", "Maths, Commerce")
             .verifyResult("Hobbies", "Sports, Reading")
             .verifyResult("Picture", "Photo.png")
