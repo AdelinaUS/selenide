@@ -13,7 +13,6 @@ allure-results
 .allure/
 .gradle/
 allure-results/
-gradle/
 build/
 bin/
 out/
