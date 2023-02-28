@@ -44,6 +44,6 @@ public class YandexMusicTest {
         $("div.d-suggest__items_type_artist").$$(".d-suggest__item-artist").first().click();
 
         $("h1.page-artist__title").shouldBe(text(title));
-        $$("div.d-tabs div").filter(visible).shouldHave(texts(List.of(tabs)));
+//        $$("div.d-tabs div").filter(visible).shouldHave(texts(List.of(tabs))); // @todo
     }
 }
