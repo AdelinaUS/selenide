@@ -1,5 +1,9 @@
 package quru.qa.lesson11pageobjects;
 
+import static com.codeborne.selenide.Selenide.$;
+import static io.qameta.allure.Allure.step;
+
+import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Tag;
@@ -19,21 +23,25 @@ public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
         String[] subjects = {"Math", "Commerce"};
         String[] hobbies = {"Sports", "Reading"};
 
-        registrationPage.openPage()
-            .setFirstName(testFirstName)
-            .setLastName(testLastName)
-            .setTestEmail(testEmail)
-            .setGender("Female")
-            .setPhone("8927123456")
-            .setBirthDate("003", "January", "1980")
-            .setSubjects(subjects)
-            .setHobbies(hobbies)
-            .setImg("src/test/resources/Photo.png")
-            .setCurrentAddress("Address1")
-            .setState("Uttar Pradesh")
-            .setCity("Agra");
+        step("Заполняем поля", () -> {
+            registrationPage.openPage()
+                .setFirstName(testFirstName)
+                .setLastName(testLastName)
+                .setTestEmail(testEmail)
+                .setGender("Female")
+                .setPhone("8927123456")
+                .setBirthDate("003", "January", "1980")
+                .setSubjects(subjects)
+                .setHobbies(hobbies)
+                .setImg("src/test/resources/Photo.png")
+                .setCurrentAddress("Address1")
+                .setState("Uttar Pradesh")
+                .setCity("Agra");
+        });
 
-        registrationPage.submit();
+        step("Отправляем форму", () -> {
+            registrationPage.submit();
+        });
 
         registrationPage.verifyResultsModalAppears()
             .verifyResult("Student Name", testFirstName + " " + testLastName)
