@@ -1,7 +1,6 @@
 package quru.qa.pages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -20,11 +19,9 @@ public class RegistrationPage {
         Selenide.open("/automation-practice-form");
 
         Selenide.executeJavaScript("$('#fixedban').remove()");
-        Selenide.executeJavaScript("$('#footer').remove()");
+        Selenide.executeJavaScript("$('footer').remove()");
 
         Selenide.$(".main-header").shouldHave(Condition.text(titleText));
-        Selenide.executeJavaScript("$('#fixedban').remove()");
-        Selenide.executeJavaScript("$('#footer').remove()");
 
         return this;
     }
