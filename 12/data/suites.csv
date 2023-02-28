@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Tue Feb 28 22:33:44 GMT 2023","Tue Feb 28 22:33:58 GMT 2023","13786","","quru.qa.lesson11pageobjects.CheckRegistrationFormWithPageObjectsTest","","quru.qa.lesson11pageobjects.CheckRegistrationFormWithPageObjectsTest","successfulRegistration","successfulRegistration()",""
+"passed","Tue Feb 28 22:34:00 GMT 2023","Tue Feb 28 22:34:03 GMT 2023","3495","","Allure Reports","","quru.qa.lesson16allure.SelenideTest","testIssueSearch","Чистый Selenide (с Listener)",""
+"passed","Tue Feb 28 22:34:06 GMT 2023","Tue Feb 28 22:34:08 GMT 2023","2194","","Allure Reports","","quru.qa.lesson16allure.SelenideTest","testLambdaStep","Проверка Issue используя лямбда шаги через step (name, () -> {})",""
+"passed","Tue Feb 28 22:33:58 GMT 2023","Tue Feb 28 22:34:00 GMT 2023","1333","","quru.qa.lesson11pageobjects.CheckRegistrationFormWithPageObjectsTest","","quru.qa.lesson11pageobjects.CheckRegistrationFormWithPageObjectsTest","unsuccessfulRegistration","unsuccessfulRegistration()",""
+"passed","Tue Feb 28 22:34:03 GMT 2023","Tue Feb 28 22:34:06 GMT 2023","2625","","Allure Reports","","quru.qa.lesson16allure.SelenideTest","testAnnotatedStep","Шаги с аннотацией @Step",""
