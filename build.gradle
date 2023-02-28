@@ -49,4 +49,9 @@ tasks.withType(JavaCompile) {
 test {
     useJUnitPlatform()
     systemProperties(System.getProperties())
+
+    String itags = System.getProperty("includeTags") ? System.getProperty("includeTags") : 'checked';
+    useJUnitPlatform{
+        includeTags  itags
+    }
 }

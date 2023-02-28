@@ -22,9 +22,11 @@ import io.qameta.allure.Story;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import quru.qa.steps.WebSteps;
 
+@Tag("checked")
 @DisplayName("Allure Reports")
 public class SelenideTest {
 
