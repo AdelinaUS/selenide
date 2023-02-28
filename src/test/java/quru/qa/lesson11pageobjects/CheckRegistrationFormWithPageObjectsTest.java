@@ -1,5 +1,7 @@
 package quru.qa.lesson11pageobjects;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import quru.qa.base.TestBase;
@@ -9,6 +11,8 @@ public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
 
     @Test
     void successfulRegistration() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
         String testFirstName = "Test first name";
         String testLastName = "Test last name";
         String testEmail = "Test@gmail.com";
@@ -47,6 +51,8 @@ public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
 
     @Test
     void unsuccessfulRegistration() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
         registrationPage
             .openPage()
             .setFirstName("Ivan")
