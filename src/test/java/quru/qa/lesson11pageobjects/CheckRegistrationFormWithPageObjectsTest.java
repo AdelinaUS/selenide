@@ -3,6 +3,7 @@ package quru.qa.lesson11pageobjects;
 import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -24,8 +25,12 @@ public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
         String[] hobbies = {"Sports", "Reading"};
 
         step("Заполняем поля", () -> {
-            registrationPage.openPage()
-                .setFirstName(testFirstName)
+            registrationPage.openPage();
+
+            Selenide.executeJavaScript("$('#fixedban').remove()");
+            Selenide.executeJavaScript("$('#footer').remove()");
+
+            registrationPage.setFirstName(testFirstName)
                 .setLastName(testLastName)
                 .setTestEmail(testEmail)
                 .setGender("Female")
@@ -61,8 +66,12 @@ public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
     void unsuccessfulRegistration() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
+        registrationPage.openPage();
+
+        Selenide.executeJavaScript("$('#fixedban').remove()");
+        Selenide.executeJavaScript("$('#footer').remove()");
+
         registrationPage
-            .openPage()
             .setFirstName("Ivan")
             .submit()
             .checkWasValidated();
