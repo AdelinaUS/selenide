@@ -35,7 +35,7 @@ public class CheckRegistrationFormWithPageObjectsTest extends TestBase {
         String month = String.valueOf(calendar.get(Calendar.MONTH));
         String year = String.valueOf(calendar.get(Calendar.YEAR));
 
-        String nameOfMonth = monthName[calendar.get(calendar.get(Calendar.MONTH))];
+        String nameOfMonth = monthName[calendar.get(Calendar.MONTH)];
 
         registrationPage.openPage()
             .setFirstName(firstName)

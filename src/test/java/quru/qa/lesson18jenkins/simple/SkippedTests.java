@@ -1,4 +1,4 @@
-package quru.qa.lesson18jenkins;
+package quru.qa.lesson18jenkins.simple;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
