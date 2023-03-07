@@ -1,8 +1,11 @@
 package quru.qa.base;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import quru.qa.data.TestData;
 import quru.qa.pages.RegistrationPage;
@@ -28,5 +31,10 @@ public class TestBaseExtended {
         ));
 
         Configuration.browserCapabilities = capabilities;
+    }
+
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 }
