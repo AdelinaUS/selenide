@@ -46,13 +46,15 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-test {
+tasks.withType(Test) {
     useJUnitPlatform()
     systemProperties(System.getProperties())
 
-    String itags = System.getProperty("includeTags") ? System.getProperty("includeTags") : 'checked';
-    useJUnitPlatform{
-        includeTags  itags
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
     }
 }
 
@@ -65,5 +67,11 @@ task simple_test(type: Test) {
 task remote_test(type: Test) {
     useJUnitPlatform {
         includeTags("remote")
+    }
+}
+
+task jenkins_properties_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("jenkins_properties")
     }
 }
